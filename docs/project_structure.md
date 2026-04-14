@@ -27,7 +27,6 @@
 │   ├── opportunities/
 │   ├── exports/
 │   └── dashboard/
-└── .codex/skills/
 ```
 
 ## 目录职责
@@ -97,11 +96,7 @@
 
 ### `docs/`
 
-项目说明、开发者指南、故障排查、架构说明、V3 协议等文档。
-
-### `.codex/skills/`
-
-项目级 Codex skill 与模板，用于稳定多轮协作。
+项目说明、开发者指南、故障排查、架构说明、交付工作流等文档。
 
 ## 模块边界
 
@@ -126,4 +121,4 @@
 1. `README.md`
 2. `docs/developer_guide.md`
 3. `docs/scoring_model.md`
-4. `docs/codex_v3_execution_protocol.md`
+4. `docs/v3_delivery_workflow.md`

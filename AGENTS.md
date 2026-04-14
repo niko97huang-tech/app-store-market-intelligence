@@ -72,7 +72,7 @@
 - `data/dashboard/`
   静态 Dashboard 输出
 - `.codex/skills/`
-  项目级 agent skill
+  可选的内部协作模板目录，不影响主链路运行
 
 ## 构建 / 运行 / 测试命令
 
@@ -153,4 +153,4 @@ npm run verify:analysis -- --base-run-id run_2026-04-11_full --target-run-id run
 - 先查现有输出 schema 和脚本入口，避免重复造轮子
 - 优先小步增量改造，而不是推翻主链路
 - 如果需求和项目定位冲突，先收敛边界，再编码
-- 涉及 V3 演进或多轮 Codex 协作时，优先参考 `docs/codex_v3_execution_protocol.md`
+- 涉及 V3 演进或多轮协作时，优先参考 `docs/v3_delivery_workflow.md`

@@ -14,8 +14,6 @@ const logger = createLogger("collect", config.logLevel);
 const DEFAULT_COUNTRY = "cn";
 const DEFAULT_DEVICE = "iphone";
 const TODAY = new Date().toISOString().slice(0, 10);
-const FALLBACK_CHROMIUM_PATH =
-  "/Users/swong.huang/Library/Caches/ms-playwright/chromium-1208/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing";
 
 const BRANDS = [
   { key: "free", brandId: 1, label: "免费榜" },
@@ -541,8 +539,11 @@ async function main() {
   const runContext = buildRunContext(options);
 
   const launchOptions = { headless: true };
-  if (fsSync.existsSync(FALLBACK_CHROMIUM_PATH)) {
-    launchOptions.executablePath = FALLBACK_CHROMIUM_PATH;
+  if (
+    config.playwrightExecutablePath &&
+    fsSync.existsSync(config.playwrightExecutablePath)
+  ) {
+    launchOptions.executablePath = config.playwrightExecutablePath;
   }
 
   const browser = await chromium.launch(launchOptions);

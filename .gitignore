@@ -8,6 +8,7 @@ node_modules/
 
 # local agent / memory
 .brv/
+.codex/
 
 # logs
 *.log

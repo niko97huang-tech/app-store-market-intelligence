@@ -1,0 +1,42 @@
+<svg width="1600" height="640" viewBox="0 0 1600 640" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="640" rx="36" fill="#06101C"/>
+  <rect x="44" y="44" width="1512" height="552" rx="28" fill="#0B1627" stroke="#1E293B" stroke-width="2"/>
+  <circle cx="1314" cy="196" r="118" fill="url(#glowA)" opacity="0.75"/>
+  <circle cx="1204" cy="368" r="156" fill="url(#glowB)" opacity="0.5"/>
+  <text x="104" y="150" fill="#E2E8F0" font-size="56" font-family="Arial, sans-serif" font-weight="700">App Store Market Intelligence</text>
+  <text x="104" y="206" fill="#94A3B8" font-size="28" font-family="Arial, sans-serif">市场数据采集 · 趋势研究 · 证据驱动决策 · AI 工作流前置层</text>
+  <rect x="104" y="258" width="252" height="44" rx="22" fill="#22C55E"/>
+  <text x="128" y="287" fill="#08111F" font-size="22" font-family="Arial, sans-serif" font-weight="700">V3 Public Preview</text>
+  <rect x="370" y="258" width="152" height="44" rx="22" fill="#0EA5E9"/>
+  <text x="399" y="287" fill="#F8FAFC" font-size="22" font-family="Arial, sans-serif" font-weight="700">Node.js</text>
+  <rect x="536" y="258" width="178" height="44" rx="22" fill="#F59E0B"/>
+  <text x="561" y="287" fill="#111827" font-size="22" font-family="Arial, sans-serif" font-weight="700">License MIT</text>
+  <text x="104" y="372" fill="#CBD5E1" font-size="26" font-family="Arial, sans-serif">App Store 榜单 / 应用详情 / 外部线索采集</text>
+  <text x="104" y="420" fill="#38BDF8" font-size="26" font-family="Arial, sans-serif">→ 市场数据采集与研究决策引擎</text>
+  <text x="104" y="468" fill="#CBD5E1" font-size="26" font-family="Arial, sans-serif">→ AI 助手（研究 / 判断 / 归因 / 动作建议）</text>
+  <text x="104" y="516" fill="#94A3B8" font-size="24" font-family="Arial, sans-serif">快照 / Diff / 趋势 / 证据结构 / 多角色评审 / Dashboard</text>
+  <path d="M1082 334L1142 276L1198 304L1272 214L1350 246" stroke="#22C55E" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M1062 218H1382" stroke="#1E293B" stroke-width="10" stroke-linecap="round"/>
+  <path d="M1062 250H1260" stroke="#1E293B" stroke-width="10" stroke-linecap="round"/>
+  <path d="M1090 444H1368" stroke="#1E293B" stroke-width="10" stroke-linecap="round"/>
+  <path d="M1090 476H1296" stroke="#1E293B" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="1266" cy="248" r="66" stroke="#38BDF8" stroke-width="12"/>
+  <circle cx="1266" cy="248" r="14" fill="#38BDF8"/>
+  <path d="M1314 200L1360 154" stroke="#38BDF8" stroke-width="10" stroke-linecap="round"/>
+  <path d="M1330 248H1392" stroke="#38BDF8" stroke-width="10" stroke-linecap="round"/>
+  <path d="M1306 294L1350 338" stroke="#38BDF8" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="1142" cy="276" r="12" fill="#22D3EE"/>
+  <circle cx="1198" cy="304" r="12" fill="#A3E635"/>
+  <circle cx="1272" cy="214" r="12" fill="#F59E0B"/>
+  <circle cx="1350" cy="246" r="12" fill="#38BDF8"/>
+  <defs>
+    <radialGradient id="glowA" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1314 196) rotate(90) scale(118)">
+      <stop stop-color="#1D4ED8"/>
+      <stop offset="1" stop-color="#06101C" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowB" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1204 368) rotate(90) scale(156)">
+      <stop stop-color="#0EA5E9"/>
+      <stop offset="1" stop-color="#06101C" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+</svg>

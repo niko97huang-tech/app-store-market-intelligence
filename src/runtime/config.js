@@ -41,6 +41,7 @@ export function getProjectConfig() {
     latestExportsDir: path.join(exportsDir, "latest"),
     latestDashboardDir: path.join(dashboardsDir, "latest"),
     runIndexFile: path.join(runsDir, "index.json"),
+    playwrightExecutablePath: process.env.APPSTORE_CHROMIUM_PATH || null,
     trend: {
       windows: parseNumberList(process.env.APPSTORE_TREND_WINDOWS, [7, 14, 30]),
       maxWindowDays: toNumber(process.env.APPSTORE_TREND_MAX_DAYS, 30),
