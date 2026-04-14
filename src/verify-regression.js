@@ -107,7 +107,7 @@ async function main() {
   if (!analysisDoc.panel_reviews?.length || !analysisDoc.final_decisions?.length) {
     throw new Error("analysis 输出缺少多角色评审或最终决策");
   }
-  if (analysisDoc.report_version !== "v3-evidence-preview") {
+  if (analysisDoc.report_version !== "v3-public-preview") {
     throw new Error(`analysis report_version 异常: ${analysisDoc.report_version}`);
   }
   if (!Array.isArray(firstCard.trend_evidence)) {

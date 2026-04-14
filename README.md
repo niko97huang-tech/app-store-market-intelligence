@@ -13,8 +13,8 @@
 
 当前版本定位：
 
-- 已实现并稳定可跑：`V2.1`
-- 正在规划和逐步实施：`V3`
+- 已公开并可运行：`V3 Public Preview`
+- 当前仓库基于稳定主链路持续增强：趋势、证据、外部证据、动作门槛
 
 ## 这是什么
 
@@ -143,7 +143,7 @@
 - `docs/`：架构、开发、故障排查、V3 协议
 - `.codex/skills/`：项目级 agent 工作流
 
-## 当前已实现的分析结构（V2.1）
+## 当前已实现的分析结构（V3 Public Preview）
 
 当前主报告已经具备：
 
@@ -164,7 +164,7 @@
 
 ## Evidence Schema V3
 
-`Evidence Schema V3` 是当前下一阶段的重点升级方向。
+`Evidence Schema V3` 是当前 V3 Public Preview 的核心结构之一。
 
 目标是把当前 evidence pack 从“信号集合”升级为“研究型证据结构”，至少统一到以下语义：
 
@@ -187,11 +187,11 @@
   - `action_readiness`
   - `evidence_confidence`
   - `attribution_summary`
-- 当前仍是 `v3-evidence-preview`，后续还会继续接 Recommendation Ladder 与更完整的外部证据约束
+- 当前已经接入 `V3 Public Preview` 主链路，后续会继续增强 Recommendation Ladder 的门槛细化与更完整的外部证据约束
 
 ## External Evidence Layer
 
-`External Evidence Layer` 是 V3 的第二个关键升级方向。
+`External Evidence Layer` 是 V3 Public Preview 的第二个关键能力层。
 
 目标不是把项目做成复杂情报平台，而是在现有内部证据之外，补充最小可运行、可降级的外部证据层，例如：
 
@@ -213,7 +213,7 @@
 
 ## Recommendation Ladder
 
-`Recommendation Ladder` 是 V3 的第三个关键升级方向。
+`Recommendation Ladder` 是 V3 Public Preview 的第三个关键能力层。
 
 目标是让最终结论优先由动作门槛决定，而不是由 `overall_score` 单独主导。
 
@@ -226,9 +226,9 @@
 
 当前状态：
 
-- 当前系统已经有这些 recommendation 字段和保守仲裁思路
-- 但还没有完成真正的“ladder-first” 收口
-- 未来会让证据强度、外部 corroboration、反证压力和执行可行性更直接决定最终动作建议
+- 当前系统已经接入 ladder-first 的主结论路径
+- 最终建议优先由证据强度、趋势强度、外部印证、反证压力和执行可行性共同约束
+- 后续仍会继续细化等级边界和证据门槛
 
 ## 输出结果
 

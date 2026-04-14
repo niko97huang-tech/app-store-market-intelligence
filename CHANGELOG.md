@@ -8,6 +8,7 @@ semantic versioning discipline for future public releases.
 ## [Unreleased]
 
 ### Added
+- V3 Public Preview baseline with Evidence Schema V3, External Evidence Layer, Recommendation Ladder, Chinese-first outputs, and static dashboard delivery.
 - Decision-oriented market analysis V2 with executive summary, decision cards, negative findings, panel reviews, and final decisions.
 - Trend-enhanced V2.1 analysis flow with multi-run trend metrics integrated into persistence scoring and report outputs.
 - Unified runtime config and structured logger for core pipeline scripts.
@@ -19,4 +20,4 @@ semantic versioning discipline for future public releases.
 ### Changed
 - Core analysis outputs now emit trend fields in JSON, Markdown, CSV, and XLSX exports.
 - Pipeline and post-collection scripts now use shared runtime configuration and logging conventions.
-
+- Public repository positioning is now aligned around V3 Public Preview instead of describing V3 as future-only work.

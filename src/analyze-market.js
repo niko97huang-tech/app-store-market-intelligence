@@ -502,7 +502,7 @@ function buildAnalysisDocument({
 
   return {
     analysis_id: `${baseBundle.meta.run_id}__vs__${targetBundle.meta.run_id}`,
-    report_version: "v3-evidence-preview",
+    report_version: "v3-public-preview",
     evidence_schema_version: "v3",
     generated_at: new Date().toISOString(),
     base_run: baseBundle.meta,
