@@ -1,4 +1,15 @@
-# App Store Market Intelligence & Decision Support
+<div align="center">
+  <img src="assets/logo.svg" alt="App Store Market Intelligence Logo" width="164" />
+  <h1>App Store Market Intelligence &amp; Decision Support</h1>
+  <p><strong>基于 Node.js 的 App Store 市场研究助理 + 决策门槛系统</strong></p>
+  <p>从市场数据采集、快照沉淀、趋势分析到证据驱动决策输出的一体化工作流</p>
+  <p>
+    <img src="https://img.shields.io/badge/Skills-V3%20Public%20Preview-22C55E?style=for-the-badge" alt="Skills V3 Public Preview" />
+    <img src="https://img.shields.io/badge/Runtime-Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js" />
+    <img src="https://img.shields.io/badge/Language-JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=111827" alt="JavaScript" />
+    <img src="https://img.shields.io/badge/License-MIT-F97316?style=for-the-badge" alt="License MIT" />
+  </p>
+</div>
 
 这是一个基于 Node.js 的 App Store 市场研究助理 + 决策门槛系统。
 
@@ -65,16 +76,42 @@ App Store 榜单 / 应用详情 / 外部线索采集 ──► [市场数据采�
 
 ## 核心能力
 
-当前已实现的核心能力：
+### 📡 市场数据采集
 
-- 榜单采集：采集七麦中国区 iPhone 免费榜、付费榜、畅销榜
-- 应用详情补齐：用 Apple Lookup 补齐应用元数据、价格、评分、版本信息
-- 版本化快照：以 `run_id` 组织每次采集结果，并维护 `latest` 镜像
-- 双 run diff：比较新上榜、掉榜、排名变化、应用详情变化
-- 趋势增强分析：基于历史 run 构建轻量趋势代理信号
-- 多角色决策：用规则化角色评审和 `decision_chair` 输出更保守的建议
-- 多格式输出：生成 Markdown / JSON / CSV / XLSX / 静态 Dashboard
-- 回归验证：通过 `check`、`test:analysis`、`verify:analysis` 校验主链路
+- 采集七麦中国区 iPhone 免费榜、付费榜、畅销榜
+- 用 Apple Lookup 补齐应用元数据、价格、评分、版本信息
+- 预留外部线索接入能力，支持把内部市场数据与外部证据放在同一条研究链路中
+
+### 🧱 快照与对比
+
+- 以 `run_id` 组织版本化快照，并维护 `latest` 镜像
+- 对比两个 run 的新上榜、掉榜、排名变化和应用变化
+- 将市场变化沉淀为可复盘、可回放、可继续加工的结构化输入
+
+### 📈 趋势研究
+
+- 基于历史 run 构建趋势增强信号
+- 区分短期热度、脆弱增长、稳定增强等不同趋势模式
+- 为后续证据判断和动作建议提供更稳的时间维度参考
+
+### 🧠 证据与决策
+
+- 接入 `Evidence Schema V3`，统一组织事实观察、支持证据、替代解释、反证、行动准备度和证据置信度
+- 接入 `External Evidence Layer`，支持最小可运行、可降级、可扩展的外部证据补强
+- 接入 `Recommendation Ladder`，让最终建议优先由动作门槛而不是单一分数决定
+- 用多角色规则化评审和 `decision_chair` 输出更保守、更可解释的建议
+
+### 🤖 AI 工作流接入
+
+- 可将 `market-analysis.json`、`opportunity_decision_cards`、`final_decisions` 直接作为 AI 助手输入
+- 适合接到研究助理、归因分析、竞品拆解、MVP 假设生成等上层 AI 工作流
+- 项目更像 AI 助手的“市场数据与研究判断中间层”，而不是单纯的数据抓取脚本
+
+### 📦 输出与验证
+
+- 输出 Markdown / JSON / CSV / XLSX / 静态 Dashboard
+- 支持 `check`、`test:analysis`、`verify:analysis` 三层验证
+- 既能用于本地阅读，也适合继续被自动化脚本或 AI 工作流消费
 
 ## 当前主链路
 
