@@ -1,0 +1,26 @@
+{
+  "name": "appstore-rank-collector",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "collect": "node src/collect.js",
+    "diff": "node src/diff-runs.js",
+    "analyze": "node src/analyze-market.js",
+    "opportunities": "node src/generate-opportunities.js",
+    "export": "node src/export-insights.js",
+    "dashboard": "node src/render-dashboard.js",
+    "pipeline": "node src/run-pipeline.js",
+    "test:analysis": "node --test tests/analysis-kernel.test.js",
+    "verify:analysis": "node src/verify-regression.js",
+    "check": "node --check src/collect.js && node --check src/diff-runs.js && node --check src/analyze-market.js && node --check src/generate-opportunities.js && node --check src/export-insights.js && node --check src/render-dashboard.js && node --check src/run-pipeline.js && node --check src/verify-regression.js && node --check src/analysis/evidence-schema.js && node --check src/analysis/recommendation-ladder.js && node --check src/analysis/external-evidence/schema.js && node --check src/analysis/external-evidence/index.js && node --check src/analysis/external-evidence/providers/sample-provider.js",
+    "test": "npm run test:analysis && npm run verify:analysis -- --base-run-id run_2026-04-11_full --target-run-id run_2026-04-13_full --top-n 10"
+  },
+  "dependencies": {
+    "exceljs": "^4.4.0",
+    "playwright": "^1.55.0"
+  },
+  "devDependencies": {
+    "prettier": "^3.8.2"
+  }
+}

@@ -1,0 +1,33 @@
+# macOS / editor
+.DS_Store
+.idea/
+.vscode/
+
+# dependencies
+node_modules/
+
+# local agent / memory
+.brv/
+
+# logs
+*.log
+npm-debug.log*
+
+# generated data outputs
+data/runs/
+data/latest/
+data/diffs/
+data/analysis/
+data/opportunities/
+data/exports/
+data/dashboard/
+
+# large local raw data snapshots
+data/apps_cn_iphone_*.json
+data/rankings_cn_iphone_*.json
+data/summary_cn_iphone_*.json
+data/categories_cn_iphone_*.json
+
+# allow small checked-in fixtures / samples
+!data/external-evidence/
+!data/external-evidence/**

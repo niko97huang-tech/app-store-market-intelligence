@@ -1,0 +1,10 @@
+先同步当前仓库状态，再按本轮任务推进：
+
+- 仓库根目录已有 AGENTS.md
+- 已有项目级 skill：.codex/skills/market-intelligence-v3/SKILL.md
+- 当前主链路已经是：
+  collect -> diff -> analyze -> opportunities -> export -> dashboard
+- 当前已有静态 dashboard，不要重复建设基础展示层
+- 当前要求是增量演进，不推翻 Node.js CLI + 文件系统持久化 + 静态 dashboard 形态
+- 不要重复做已经完成的基础设施建设
+- 先审计当前实现状态，再开始本轮任务

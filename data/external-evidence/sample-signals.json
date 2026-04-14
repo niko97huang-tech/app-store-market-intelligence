@@ -1,0 +1,50 @@
+[
+  {
+    "signal_type": "release_note",
+    "source_name": "样例更新说明",
+    "source_id": "sample:keep-ai-coach-2026-04-12",
+    "title": "Keep - AI 运动教练新增个性化 AI 训练计划",
+    "published_at": "2026-04-12T08:00:00Z",
+    "retrieved_at": "2026-04-14T01:00:00Z",
+    "matched_app": ["Keep - AI 运动教练"],
+    "matched_category": ["健康健美"],
+    "matched_theme": ["AI", "订阅型"],
+    "match_reason": "样例记录：用于验证外部证据能够按应用名与分类名匹配到健康健美/畅销榜。",
+    "structured_summary": "样例外部证据：模拟应用更新说明，强调 AI 训练计划与付费健身指导场景的强化。",
+    "confidence": "medium",
+    "freshness": "fresh",
+    "relevance_score": 0.88
+  },
+  {
+    "signal_type": "product_update",
+    "source_name": "样例产品公告",
+    "source_id": "sample:visit-japan-web-ai-guide-2026-04-11",
+    "title": "Visit Japan Web: AI Guide 增加行程问答助手",
+    "published_at": "2026-04-11T03:00:00Z",
+    "retrieved_at": "2026-04-14T01:00:00Z",
+    "matched_app": ["Visit Japan Web: AI Guide"],
+    "matched_category": ["旅游"],
+    "matched_theme": ["AI", "订阅型"],
+    "match_reason": "样例记录：用于验证旅游/畅销榜的 AI 主题命中。",
+    "structured_summary": "样例外部证据：模拟产品更新公告，说明旅游助手类应用增加 AI 问答和行程建议能力。",
+    "confidence": "medium",
+    "freshness": "fresh",
+    "relevance_score": 0.81
+  },
+  {
+    "signal_type": "campaign_note",
+    "source_name": "样例运营活动",
+    "source_id": "sample:design-ai-campaign-2026-04-10",
+    "title": "瞬创AI 推出视频创作活动页",
+    "published_at": "2026-04-10T09:00:00Z",
+    "retrieved_at": "2026-04-14T01:00:00Z",
+    "matched_app": ["瞬创AI—AI辅助视频创作工具"],
+    "matched_category": ["图形和设计"],
+    "matched_theme": ["AI", "订阅型", "内容"],
+    "match_reason": "样例记录：用于验证图形和设计赛道的外部活动信号接入。",
+    "structured_summary": "样例外部证据：模拟营销活动信息，指向 AI 内容创作工具在短期内的增长可能包含运营活动因素。",
+    "confidence": "low",
+    "freshness": "fresh",
+    "relevance_score": 0.73
+  }
+]
