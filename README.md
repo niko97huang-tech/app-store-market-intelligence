@@ -16,6 +16,19 @@
 - 已公开并可运行：`V3 Public Preview`
 - 当前仓库基于稳定主链路持续增强：趋势、证据、外部证据、动作门槛
 
+## 它在工作流中的位置
+
+```text
+App Store 榜单 / 应用详情 / 外部线索采集 ──► [市场数据采集与研究决策引擎] ──► 你的 AI 助手（研究 / 判断 / 归因 / 动作建议）
+                                                     ▲                                                          │
+                                                     │                                                          ▼
+                                   快照 / Diff / 趋势 / 证据结构 / 多角色评审 ◄────── 报告 / 导出 / Dashboard / 后续验证
+```
+
+这个项目不是单纯抓榜单，也不只是做报表，而是位于“市场数据采集”和“研究判断输出”之间的中间层。
+
+它负责把榜单抓取、应用详情补齐、快照沉淀、差异对比、趋势分析、证据组织和多角色评审串成一条完整链路，供 AI 助手或人工继续消费。
+
 ## 这是什么
 
 这个项目是一个围绕 App Store 市场研究建立的离线分析系统，核心主链路是：
@@ -339,21 +352,24 @@ npm test
 
 ## 路线图
 
-### 当前稳定层
+### 当前已发布（V3 Public Preview）
 
-- V2.1 趋势增强版分析链路
+- 趋势增强版分析链路
 - 多角色决策
+- Evidence Schema V3
+- External Evidence Layer（最小可运行版）
+- Recommendation Ladder（ladder-first 主结论路径）
 - 多格式导出
 - 静态 Dashboard
 - 最小测试与回归验证
 
-### 下一步（V3）
+### 下一步（V3 收口与增强）
 
-1. README / docs / scripts 口径统一
-2. Evidence Schema V3
-3. External Evidence Layer
-4. Recommendation Ladder
-5. 输出层和 Dashboard 升级
+1. 补充 README 截图与更强的 GitHub 首页展示
+2. 继续增强真实外部证据 provider，而不只依赖样例 provider
+3. 细化 Recommendation Ladder 的等级边界与证据门槛
+4. 统一输出层和 Dashboard 的 V3 展示表达
+5. 接入最小 CI
 6. 多 agent review
 7. 最终收口与交付报告
 
@@ -377,4 +393,4 @@ npm test
 
 一句话总结：
 
-这个仓库当前已经是一个可运行的 App Store 市场研究与决策辅助系统；下一阶段的关键，不是继续堆更多报表，而是把证据结构、外部证据和动作门槛真正做厚。
+这个仓库当前已经是一个可运行的 V3 Public Preview 版 App Store 市场研究与决策辅助系统；下一阶段的关键，不是继续堆更多报表，而是把外部证据、动作门槛和发布收口真正做厚。
