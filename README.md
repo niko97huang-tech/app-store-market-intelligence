@@ -1,5 +1,4 @@
 <div align="center">
-  <img src="assets/banner-option-e.svg" alt="App Store Ranking Analysis Banner" width="100%" />
   <h1>App Store Ranking Analysis</h1>
   <p><strong>基于 Node.js 的 App Store 榜单分析与趋势观察工具</strong></p>
   <p>采集榜单、对比变化、生成报告，帮你更快看清中国区 App Store 类目趋势。</p>
