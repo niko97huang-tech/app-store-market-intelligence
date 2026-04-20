@@ -1,8 +1,8 @@
 <div align="center">
-  <img src="assets/banner-option-e.svg" alt="App Store Market Intelligence Banner" width="100%" />
-  <h1>App Store Market Intelligence &amp; Decision Support</h1>
-  <p><strong>基于 Node.js 的 App Store 市场研究助理 + 决策门槛系统</strong></p>
-  <p>从市场数据采集、趋势研究到证据驱动决策输出的一体化工作流</p>
+  <img src="assets/banner-option-e.svg" alt="App Store Ranking Analysis Banner" width="100%" />
+  <h1>App Store Ranking Analysis</h1>
+  <p><strong>基于 Node.js 的 App Store 榜单分析与趋势观察工具</strong></p>
+  <p>采集榜单、对比变化、生成报告，帮你更快看清中国区 App Store 类目趋势。</p>
   <p>
     <img src="https://img.shields.io/badge/%E9%98%B6%E6%AE%B5-V3%20Public%20Preview-22C55E?style=for-the-badge" alt="阶段 V3 Public Preview" />
     <img src="https://img.shields.io/badge/%E8%BF%90%E8%A1%8C%E6%97%B6-Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="运行时 Node.js" />
@@ -11,20 +11,81 @@
   </p>
 </div>
 
-这是一个基于 Node.js 的 App Store 市场研究助理 + 决策门槛系统。
+这是一个面向中国区 App Store 的榜单分析系统。
 
-它的目标不是单纯抓榜单，而是把中国区 iPhone App Store 的榜单变化、应用元数据和趋势信号，整理成可用于赛道研究、竞品跟踪、选题判断和下一步行动决策的结构化结果。
+> 如果你不想只看榜单名次，而是想看清哪些类目真的在变化，这个项目会更适合你。
+
+它不是只展示排名的榜单页，而是一条完整的分析链路：
+
+- 先采集榜单和应用详情
+- 再做版本化快照和 run 对比
+- 再结合趋势和结构化分析整理变化线索
+- 最后导出成报告、表格和静态 Dashboard
+
+它主要回答三类问题：
+
+- 最近哪些类目是真的在变，不只是榜单噪音
+- 哪些类目值得继续跟踪和观察
+- 哪些机会看起来热，但证据还不够，应该先停下来
 
 当前版本：`V3 Public Preview`
 
-当前形态：
+## 为什么值得看
 
-- Node.js CLI
-- 文件系统持久化
-- Markdown / JSON / CSV / XLSX 输出
-- 静态只读 Dashboard
+很多 App Store 项目只停留在榜单采集、排名展示和报表导出。
 
-## 它在工作流中的位置
+这个项目会继续往前走一步，把变化整理成更容易阅读、比较和回看的分析结果。
+
+它会把榜单变化、应用详情、趋势样本和外部线索整理成一套可复核的输出：
+
+- 主分析报告
+- 重点类目卡片
+- CSV / XLSX / 静态 Dashboard
+
+换句话说，它不是“告诉你谁排第几”，而是“把榜单变化整理成更可用的分析结果”。
+
+## 它适合谁
+
+这个项目当前最适合下面几类人：
+
+- 独立开发者：想先筛掉明显不值得做的 App 方向
+- 产品经理：想快速判断某个类目最近是不是真的在变化
+- 数据分析或研究场景：需要可复核、可导出的榜单分析结果
+- ASO / 市场研究从业者：需要快照、diff、趋势和结构化结论
+
+如果你想找的是在线 SaaS，这不是它。
+如果你想找的是一个本地可运行的榜单分析工具，这就是它。
+
+## 3 分钟快速体验
+
+仓库已经带了样例 `run`、分析结果和 Dashboard。第一次体验不需要先抓新数据，可以先直接走样例链路。
+
+### 1. 安装依赖
+
+```bash
+npm install
+```
+
+### 2. 跑一遍仓库内样例流程
+
+```bash
+npm run verify:analysis -- --base-run-id run_2026-04-11_full --target-run-id run_2026-04-13_full --top-n 10
+```
+
+### 3. 直接打开样例 Dashboard
+
+```bash
+open data/dashboard/run_2026-04-11_full__vs__run_2026-04-13_full/index.html
+```
+
+运行后你会直接看到：
+
+- 分析报告：`data/analysis/<analysis_id>/market-analysis.md`
+- 重点类目清单：`data/opportunities/<analysis_id>/opportunities.md`
+- 表格导出：`data/exports/<analysis_id>/`
+- 静态 Dashboard：`data/dashboard/<analysis_id>/index.html`
+
+## 它在整个工作流里的位置
 
 ```text
 App Store 榜单 / 应用详情 / 外部线索采集 ──► [市场数据采集与研究决策引擎] ──► 你的 AI 助手（研究 / 判断 / 归因 / 动作建议）
@@ -33,221 +94,166 @@ App Store 榜单 / 应用详情 / 外部线索采集 ──► [市场数据采�
                                    快照 / Diff / 趋势 / 证据结构 / 多角色评审 ◄────── 报告 / 导出 / Dashboard / 后续验证
 ```
 
-这个项目不是单纯抓榜单，也不只是做报表，而是位于“市场数据采集”和“研究判断输出”之间的中间层。它负责把榜单抓取、应用详情补齐、快照沉淀、差异对比、趋势分析、证据组织和多角色评审串成一条完整链路，供 AI 助手或人工继续消费。
+它位于“原始市场数据”和“分析输出”之间。
 
-## 这是什么
+它的价值不在于“再多抓一点字段”，而在于把下面这些环节稳定地组织成一条链路：
 
-这是一个围绕 App Store 市场研究建立的离线分析系统，核心主链路是：
+- 快照
+- diff
+- 趋势
+- 结构化分析
+- 报告输出
+
+## 核心主链路
+
+整个标准链路是：
 
 `collect -> diff -> analyze -> opportunities -> export -> dashboard`
 
-当前更适合解决的问题是：
+对应入口脚本：
 
-- 最近哪些赛道发生了值得关注的变化
-- 哪些方向更值得继续观察、研究或快速验证
-- 哪些结论证据还不够，只能保持保守判断
+- `src/collect.js`
+- `src/diff-runs.js`
+- `src/analyze-market.js`
+- `src/generate-opportunities.js`
+- `src/export-insights.js`
+- `src/render-dashboard.js`
+- `src/run-pipeline.js`
 
-## 这不是什么
+标准数据流：
 
-这个项目不是：
+`runs -> diffs -> analysis -> opportunities -> exports -> dashboard`
 
-- 普通榜单爬虫
-- 在线 SaaS
-- 数据库中台
-- 自动立项机器
-- Java / Spring / Vue 项目
-- 必须依赖数据库才能运行的系统
+## 你能得到什么
 
-也就是说，它当前是一个“本地可运行、可复核、可导出的研究系统”，不是在线平台。
-
-## 核心能力
-
-### 📡 市场数据采集
+### 1. 榜单采集与应用详情补齐
 
 - 采集七麦中国区 iPhone 免费榜、付费榜、畅销榜
-- 用 Apple Lookup 补齐应用元数据、价格、评分、版本信息
-- 预留外部线索接入能力，支持把内部市场数据与外部证据放在同一条研究链路中
+- 覆盖多个应用分类，并按分页抓取榜单数据
+- 用 Apple Lookup 补齐名称、价格、评分、版本等元数据
+- 每次采集都写入版本化快照
 
-### 🧱 快照与对比
+### 2. 版本化快照与 run 对比
 
-- 以 `run_id` 组织版本化快照，并维护 `latest` 镜像
-- 对比两个 run 的新上榜、掉榜、排名变化和应用变化
-- 将市场变化沉淀为可复盘、可回放、可继续加工的结构化输入
+- 以 `run_id` 组织每次采集
+- 维护 `latest` 镜像，方便读取最近一次结果
+- 对比两个 run 的新上榜、掉榜、排名变化和应用字段变化
 
-### 📈 趋势研究
+### 3. 趋势增强研究
 
-- 基于历史 run 构建趋势增强信号
-- 区分短期热度、脆弱增长、稳定增强等不同趋势模式
-- 为后续证据判断和动作建议提供更稳的时间维度参考
+- 结合历史 run 构建趋势数据
+- 区分簇状增长、短期热度、强趋势但脆弱、稳定累积等模式
+- 给后续判断提供时间维度支撑
 
-### 🧠 证据与决策
+### 4. 分析结果整理
 
-- 接入 `Evidence Schema V3`，统一组织事实观察、支持证据、替代解释、反证、行动准备度和证据置信度
-- 接入 `External Evidence Layer`，支持最小可运行、可降级、可扩展的外部证据补强
-- 接入 `Recommendation Ladder`，让最终建议优先由动作门槛而不是单一分数决定
-- 用多角色规则化评审和 `decision_chair` 输出更保守、更可解释的建议
+- 榜单变化摘要
+- 趋势与风险整理
+- 评分与分层结果
+- 结构化报告字段
 
-### 🤖 AI 工作流接入
+这里的目标不是只给一个分数，而是把变化、趋势、线索和风险整理成更容易阅读的报告内容。
 
-- 可将 `market-analysis.json`、`opportunity_decision_cards`、`final_decisions` 直接作为 AI 助手输入
-- 适合接到研究助理、归因分析、竞品拆解、MVP 假设生成等上层 AI 工作流
-- 项目更像 AI 助手的“市场数据与研究判断中间层”，而不是单纯的数据抓取脚本
+### 5. 多种最终产物
 
-### 📦 输出与验证
+- Markdown
+- JSON
+- CSV
+- XLSX
+- 静态只读 Dashboard
 
-- 输出 Markdown / JSON / CSV / XLSX / 静态 Dashboard
-- 支持 `check`、`test:analysis`、`verify:analysis` 三层验证
-- 既能用于本地阅读，也适合继续被自动化脚本或 AI 工作流消费
+这些结果既可以给人直接阅读，也可以继续用于后续处理。
 
-## 当前主链路
+## 当前形态
 
-- `collect`：采集榜单与应用详情，生成版本化快照
-- `diff`：比较两个 run 的市场变化
-- `analyze`：生成趋势、证据和主分析报告
-- `opportunities`：生成机会卡与建议动作
-- `export`：导出 CSV / XLSX
-- `dashboard`：生成静态阅读页
+这个项目当前是：
 
-## 关键目录
+- Node.js CLI
+- 文件系统持久化
+- 静态 dashboard
+- 单机可运行
+
+## 项目结构
 
 - `src/`：主链路脚本入口
-- `src/analysis/`：趋势、证据、评分、评审、仲裁等分析内核
+- `src/analysis/`：趋势、评分、报告整理等分析逻辑
 - `src/runtime/`：配置与日志
 - `tests/`：最小测试与回归
-- `docs/`：开发、架构、排障说明
+- `docs/`：开发、排障与相关文档
 - `data/`：快照、diff、分析结果、导出和 dashboard 产物
-- `assets/`：README 展示图与项目视觉素材
+- `assets/`：README 视觉素材
 
-## 数据采集能力
+## 典型输出
 
-当前项目的第一层能力不是分析，而是市场数据采集。
-
-它已经支持：
-
-- 采集中国区 iPhone App Store 免费榜、付费榜、畅销榜
-- 覆盖多个应用分类，并按分页持续抓取榜单数据
-- 用 Apple Lookup 补齐应用名称、价格、评分、版本等详情
-- 将每次采集结果沉淀成可复盘的版本化快照
-
-这意味着它不是只消费现成数据，而是已经打通了从榜单采集到研究输入的第一段链路。
-
-## 外部证据能力
-
-除了榜单和应用详情，当前系统也预留了外部证据补强能力，用来给研究结论增加更多背景信息。
-
-当前这部分主要面向：
-
-- 官方更新说明
-- 公司新闻或博客
-- 价格变化说明
-- 活动或媒体报道
-
-当前版本已经打通了外部证据的接入、匹配和降级逻辑。即使没有命中外部证据，主链路仍然可以正常运行；如果后续接入真实新闻源或资讯源，也可以在现有结构上继续扩展。
-
-## 决策输出能力
-
-在完成采集、快照、差异和趋势处理之后，系统会把结果整理成更适合研究和判断的输出，包括：
-
-- 更值得关注的赛道变化
-- 更值得继续观察、深入研究或快速验证的方向
-- 当前证据仍不足、需要保持保守判断的方向
-- 可直接继续被 AI 助手或人工消费的结构化结果
-
-最终输出不是单纯的榜单报表，而是围绕“要不要继续研究、为什么、风险在哪、下一步做什么”来组织的。
-
-## 模型与密钥
-
-当前主链路不依赖外部大模型服务，也不要求配置 OpenAI、Gemini 等模型密钥。
-
-默认情况下，你只需要：
-
-- Node.js 依赖
-- Playwright 浏览器环境
-- 本地文件系统读写权限
-
-如果本机 Playwright 浏览器路径特殊，可额外设置：
-
-```bash
-APPSTORE_CHROMIUM_PATH=/your/chromium/path
-```
-
-## 输出结果
-
-每次运行后，你最终会拿到 5 类结果：
+每次完整链路跑完后，通常会得到 5 类结果。
 
 ### 1. 市场快照
 
-保存某一次采集到的榜单和应用详情，方便后续回看、比较和复盘。
+记录某一次采集到的榜单和应用详情，便于回看和对比。
 
 ### 2. 变化对比结果
 
-告诉你两个时间点之间发生了什么变化，例如：
+回答两个时间点之间发生了什么：
 
 - 哪些应用新上榜或掉榜
-- 哪些分类变化更明显
-- 哪些应用排名波动更快
+- 哪些类目波动更明显
+- 哪些应用排名变化更快
 
 ### 3. 主分析报告
 
-这是最适合直接阅读的核心结果，会告诉你：
+这是最适合直接阅读的核心结果，重点是：
 
 - 当前最值得关注的变化是什么
-- 哪些方向更值得继续观察、研究或验证
-- 当前最大的风险和证据缺口是什么
+- 哪些类目更值得继续观察和跟踪
+- 风险和证据缺口在哪里
 
-### 4. 机会卡与决策表
+### 4. 类目卡片与分析表
 
-这是最适合继续给 AI 助手或自己做下一步判断的结构化结果，重点包括：
+这是最适合继续阅读和比较的结构化结果，包括：
 
-- 机会卡
-- 最终建议
-- 下一步动作
-- 多角色评审结果
+- 重点类目卡片
 - 分数与证据拆解
+- 趋势与风险摘要
 
 ### 5. 表格导出与 Dashboard
 
-如果你更习惯用表格或页面浏览，系统还会生成：
+如果你更习惯表格和页面浏览，系统还会输出：
 
-- CSV 导出表
+- CSV
 - Excel 汇总文件
-- 静态 Dashboard 页面
+- 静态 HTML Dashboard
 
-对应的常见产物位置包括：
+常见产物路径：
 
 - `data/analysis/<analysis_id>/market-analysis.md`
+- `data/analysis/<analysis_id>/market-analysis.json`
 - `data/opportunities/<analysis_id>/opportunities.md`
+- `data/opportunities/<analysis_id>/opportunities.json`
 - `data/exports/<analysis_id>/`
+- `data/exports/<analysis_id>/insights.xlsx`
 - `data/dashboard/<analysis_id>/index.html`
 
 ## 快速开始
 
-### 1. 安装依赖
+### 安装依赖
 
 ```bash
 npm install
 ```
 
-如本机缺 Playwright 浏览器环境，再执行：
+如本机缺少 Playwright 浏览器环境，再执行：
 
 ```bash
 npx playwright install chromium
 ```
 
-### 2. 跑完整主链路
+### 跑完整主链路
 
 ```bash
 npm run pipeline -- --base-run-id <base_run_id> --target-run-id <target_run_id> --top-n 10
 ```
 
-### 3. 做一次最小验证
-
-```bash
-npm run check
-npm run test:analysis
-```
-
-如果你想按步骤执行，也可以分别运行：
+### 分步执行
 
 ```bash
 npm run diff -- --base-run-id <base_run_id> --target-run-id <target_run_id>
@@ -257,13 +263,19 @@ npm run export -- --analysis-id <analysis_id>
 npm run dashboard -- --analysis-id <analysis_id>
 ```
 
-### 4. 新采集一次市场快照
+### 新采集一个 run
 
 ```bash
 npm run collect -- --date 2026-04-13 --pages 10
 ```
 
-## 工程化入口
+如果想固定本次 `run_id`：
+
+```bash
+npm run collect -- --date 2026-04-13 --run-id run_2026-04-13_full
+```
+
+## 验证方式
 
 ### 语法检查
 
@@ -280,58 +292,48 @@ npm run test:analysis
 ### 主链路回归验证
 
 ```bash
-npm run verify:analysis -- --base-run-id <base_run_id> --target-run-id <target_run_id> --top-n 10
+npm run verify:analysis -- --base-run-id run_2026-04-11_full --target-run-id run_2026-04-13_full --top-n 10
 ```
 
-### 推荐最小提交前检查
+### 推荐的最小提交前检查
 
 ```bash
 npm run check
 npm test
 ```
 
-## 当前边界
+## 运行环境与配置
 
-当前明确保留的项目边界：
+默认情况下，你只需要：
 
-- 保留 Node.js CLI + 文件系统持久化 + 静态 dashboard
-- 不迁移到 Java / Spring / Vue
-- 不引入数据库作为运行前提
-- 不做无关的大规模重构
-- 优先 schema 清晰化、测试、文档一致性和回归稳定
+- Node.js 20+
+- npm
+- Playwright 运行环境
+- 本地文件系统读写权限
+- 可访问七麦页面和 Apple Lookup 的网络环境
 
-当前明确不做：
+当前主链路不依赖 OpenAI、Gemini 等外部大模型服务。
 
-- 在线 SaaS 化
-- 多用户平台化
-- 数据库中台化
-- 大规模服务化拆分
-- 为了未来通用性做过度抽象
+如果本机 Playwright 浏览器路径特殊，可额外设置：
 
-## 路线图
+```bash
+APPSTORE_CHROMIUM_PATH=/your/chromium/path
+```
 
-### 当前已发布
+也支持部分运行时配置覆盖：
 
-- 趋势增强版分析链路
-- 多角色决策
-- Evidence Schema V3
-- External Evidence Layer（最小可运行版）
-- Recommendation Ladder（ladder-first 主结论路径）
-- 多格式导出
-- 静态 Dashboard
-- 最小测试与回归验证
-
-### 接下来会继续增强
-
-- 更真实的外部证据来源，而不只依赖示例数据
-- 更清晰的动作门槛与建议边界
-- 更好的 Dashboard 展示与 README 截图
-- 更完整的自动校验与交付文档
+- `APPSTORE_DATA_DIR`
+- `APPSTORE_LOG_LEVEL`
+- `APPSTORE_TREND_WINDOWS`
+- `APPSTORE_TREND_MAX_DAYS`
+- `APPSTORE_TREND_MAX_RUNS`
+- `APPSTORE_TREND_MIN_RANKING_ROWS`
 
 ## 相关文档
 
 - [开发者指南](docs/developer_guide.md)
 - [故障排查](docs/troubleshooting.md)
+- [推广前检查清单](docs/promotion_readiness_checklist.md)
 - [评分模型说明](docs/scoring_model.md)
 - [V2 设计说明](docs/report_v2_design.md)
 - [新版本开发计划](docs/version_next_plan.md)
@@ -346,4 +348,4 @@ npm test
 
 一句话总结：
 
-这个仓库当前已经是一个可运行的 V3 Public Preview 版 App Store 市场研究与决策辅助系统；下一阶段的关键，不是继续堆更多报表，而是把外部证据、动作门槛和发布收口真正做厚。
+这是一个面向 App Store 赛道研究的离线决策支持系统。它的价值不在于“多抓一些榜单”，而在于先帮你把噪音和值得继续研究的方向分开。
